@@ -14,26 +14,33 @@
 <body>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="gct" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+    <%@ taglib uri="/WEB-INF/health.tld" prefix="richard" %>
 <%--    <% List<Patient> records = (List<Patient>) request.getAttribute("people");%>--%>
-
+    <a href="admit.jsp"> Admit new Via Servlet</a>
+    <a href="admitbean.jsp"> Admit new Via JSP</a>
+    <a href="disable">Logout</a>
     <table>
         <thead>
             <tr>
                 <th>Patient Id</th>
                 <th>Patient Name</th>
                 <th>Patient Weight</th>
+                <th>BMI</th>
             </tr>
         </thead>
         <tbody>
             <gct:choose>
-                <gct:when test="${not empty people}">
-                    <gct:forEach var="temp" items="${people}">
+                <gct:when test="${not empty sessionScope.people}">
+                    <gct:forEach var="temp" items="${sessionScope.people}">
                         <tr>
                             <td>${temp.patientId}</td>
                             <td style="color: brown">${temp.patientName}</td>
                             <td style="color: blue">
-                                    <fmt:formatNumber pattern="##.##" value="${temp.weight}" />
+                                <fmt:formatNumber pattern="##.##" value="${temp.weight}" />
 <%--                                        <fmt:formatNumber type="currency" value="${temp.weight}" />--%>
+                            </td>
+                            <td>
+                                <richard:bmi height="${temp.height}" weight="${temp.weight}"/>
                             </td>
                         </tr>
                     </gct:forEach>
@@ -67,5 +74,11 @@
 <%--            <%}%>--%>
         </tbody>
     </table>
+<%--    cookies display--%>
+<%--    <%--%>
+<%--        Cookie[] cookies = request.getCookies();--%>
+<%--        for(Cookie each:cookies)--%>
+<%--            out.print(each.getName()+" "+each.getValue());--%>
+<%--    %>--%>
 </body>
 </html>
