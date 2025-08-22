@@ -1,0 +1,389 @@
+GCT Java FSD Training:
+
+task1:
+consider an array contains 10 bill numbers find the first minimum missing bill number in that
+eg:
+Input: 9,4,5,12,90,7
+Outout: 6
+Input: 1,4,5,12,90,7
+Outout: 2
+Input: 45,49,50,90,47,46
+Outout: 48
+Input: 0,1,2,3,4,5,6
+Outout: 7
+
+find distinct values in array:
+
+Example:
+Input: {11,65,9,3,45}
+Output: 1,6,5,9,3,4
+
+Find the least prime number within boundry
+
+input:
+{
+[3, 5, 7],
+[10, 15, 20]
+}
+Output:
+7 -1 13
+Input:
+{
+4, 6, 8
+5, 10, 15
+}
+Output:
+-1 -1 -1
+
+
+
+https://github.com/razzaksr/Gnanamani-ICT-JFSD
+
+
+
+OOP: Security, Reusability
+Class
+Object
+Encapsulation
+Polymorphism
+Inheritance
+Abstraction
+
+Task:
+
+Create a class named TELLERMACHINE where data's are machineBalance in which users can 
+a. withdraw money
+b. deposit money
+c. view available
+include polymorphism, encapsulation
+
+
+
+setter:
+public void setMember(membertype variable){
+this.datamember  variable;
+}
+
+getter:
+public MEMBERTYPE getMember(){
+	return member;
+}
+
+
+
+inner class: class as a member
+1. static member
+2. non static member
+3. local member
+4. anonymous member
+
+
+Model Class's:
+
+Profile:
+	email
+	likedVideos	>> array of videos
+	watchLater	>> array of videos
+Video:	title,	duration,	channel
+
+
+
+interface: block like a class with following differences
+	1. interface's data members are constant(final modifier)
+	2. member functions are abstract( method without body)
+
+
+	 class extends class
+	 class implements interface
+	 interface extends interface
+
+
+
+twisted prime
+43
+34
+
+
+Create following encapsulated classes:
+Customer:
+name, email, password, contact, username
+
+Address:
+addressId, doorNo, building, street, pin, state, country, userid(username)
+
+Error: Can't handle
+Exception: Can handle
+
+	throwable>> interface
+		|
+	Exception>> class
+		|
+	RuntimeException>> class
+
+
+	types:
+		compile time/ checked
+		eg:
+			IOException
+			InterruptedException
+	runtime/ unchecked:
+		eg: 
+		InputMismatchException
+		ArrayIndexOutOfBoundsException
+		
+
+	handle:
+	try{
+	// probable stemt raise exception
+	}catch(ExceptionClass object){
+		object.printStackTrace();
+		// another chance
+		}
+
+		throws:
+			method signature(method beginning)
+
+
+	try..catch
+	try...catch..finally
+	try...catch..try..catch..try...catch
+	try...catch..throw...try..catch
+
+	user defined exception:
+		Class extends RuntimeException
+		
+
+
+	
+	
+	BMI Calculator:
+		where weight, height is given to find out bmi
+
+	Consider the following is array of LLM's such as {groq, gemeni, openai, deepseak, claude} where you are looking for desired llm and the program should return the position of it if user given llm is not exists raise LLMNotFoundExcpetion and provide another chance to user to search another llm in the array
+eg:
+input: grok
+LLMNotFoundException
+chance: groq
+Output: 1
+
+
+Multithreading:
+	concurrent access
+	
+
+	Resource class:
+		1. extends Thread
+		2. implements Runnable
+		execution point:
+			public void run()
+	Execution class:
+		execution point: main
+		create threads to the resource
+
+
+
+life cycle:
+	born state:
+	Thread obje = new Thread(res)
+	running state:
+		obje.start()
+	waiting state:
+		sleep(interval)
+		wait()
+	termination state
+		stop()
+
+
+	0,1,0,2,0,1,0,1
+	s		     e
+	c
+
+	0,1,0,2,0,1,0,1
+ 	   s	            e
+	      c
+
+	0,0,1,2,0,1,0,1
+ 	      s	            e
+	         c
+
+	0,0,1,1,0,1,0,2
+ 	      s	            e
+	            c
+
+	0,0,0,1,1,1,0,2
+ 	         s	  e
+	                  c	
+
+	0,0,0,0,1,1,1,2
+ 	         s	  e
+	                  c	
+
+
+0,0,0,0,1,1,1,2
+
+
+	Validate IPV4 using single task multi thread 	where each thread need to get input string 	from user via scanner which states ip 	address, task is to validate whether entered 
+	ip
+	Example:
+	120.0.0.1 >> valid
+	0.0.0.255	>> valid
+	0.0.0.0255>> invalid
+	256.0.0.0 >> invalid
+	0.0..255	>> invalid
+	note each digit in ip lies between 0 to 255
+	
+Maven Project:
+	archetype>> webapp
+	
+	artifactid/ project
+	groupid/ package
+
+
+    vscode creating a maven project:
+	ctrl+shift+p
+		maven
+			switch flat view
+
+
+
+mvn org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate -DarchetypeArtifactId="maven-archetype-webapp" -DarchetypeGroupId="org.apache.maven.archetypes" -DarchetypeVersion="1.4" -DgroupId="com.example" -DartifactId="demo"
+
+
+WebApp >> Jakarta Enterprise Edition
+
+	servlet>> api>> backend
+	jsp		ui>> 	 front end
+
+tomcat application server>>
+	HttpServlet
+	servlet>> java file it has url reference to be used to call/ execute
+	which can handle request from front end
+		life cycle servlet/ jsp:
+			init>> initialization immediate after url mentioned in browser
+			service>> process the request
+				get,post,put,delete
+			destroy
+
+request>> HttpServletRequest
+	url/ address
+	parameter >> data transfer via url(visible)
+	body	  >> data transfer not visible
+	mapping	  >> get,post,put, patch, delete
+response> HttpServletReponse	
+	status code>> 404, 500, 401, 403
+	data
+
+
+maven:
+	1. distributed project structure
+		src/main/java >> source code
+		src/test/ java	>  test code
+		src/main/webapp>> jsp, images,css
+		pom.xml
+			>> project config, dependencies(libraries)
+	2. Dependency handling:
+		mvnrepository.com>> remote maven
+			library copy paste in pom.xml's dependencies section (local maven)
+	3. Deployment: maven commands
+		mvn clean	>> build
+		mvn install	>> local maven war
+		mvn package	>> war generate
+		mvn deploy	>> war remote
+		
+	mvnrepository.com
+	to work with servlet: javax.servert-api
+	to work with jsp: javax.servlet.jsp-api
+
+	servlet:
+		invoke when the specified url mentioned in the browser
+	filter:
+		invokes early before each servlet 
+	listener:
+		invokes only once when deployment done
+
+
+	jsp/ ui:
+		java server pages
+		html + java
+		
+		writing java code in jsp:
+		scriptlet tag:
+			<% %> executable
+		expression tag:
+			<%= %> printable statement
+		comment tag:
+			<%!-- --%> comments
+
+	Directives:
+		<%@ page %> --- import/ config
+		<%@ taglib %> --- additional tag
+
+	JSP Implicit objects:
+		request>> HttpServletRequest
+		response> HttpServletResponse
+		session	> HttpSession
+		out		> JspWriter
+		.....
+	JSP:
+		without code to perform logical actions
+		Jsp Standard Tag Library
+		tld>> mapping tag with action class
+		jstl-api>> library of all jstl tag classes
+		
+			core:
+		set, out, when, choose, otherwise, forEach
+			sql: database 
+			format: number parse
+		Tag Library Descriptor:
+		<input type="" name="" id="">
+			name, attributes
+			tag-class
+
+
+		Tag:
+			tag with attribute:
+				<form action=""></form>
+			tag with body:
+				<div>......</div>
+				<td>......</td>
+	Custom Tags
+		TLD:
+			<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                            http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+    <tlib-version>1.0</tlib-version>
+    <short-name>health</short-name>
+    <uri>/WEB-INF/health.tld</uri>
+
+</taglib>
+
+
+
+http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Sugun&weight=65&height=176&age=31&contactNo=7654567890	
+
+	
+	http://localhost:8081/PatientRM_war/admit.jsp
+	/enroll	>> AdmitServlet
+	
+
+	JSP Action tags:
+	
+		include, import, useBean, setProperty, getProperty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
